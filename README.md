@@ -1,5 +1,5 @@
 # Pixivでブックマークしたイラストを自動保存するツール
-　[Pixiv](https://www.pixiv.net/)のイラストを保存する場合などはPixiv非公式APIの[PixivPy](https://github.com/upbit/pixivpy)を使うと思いますが，このツールでは[Puppeteer](https://github.com/puppeteer/puppeteer)によるブラウザの自動制御でイラストの保存を行います．保存対象は__ユーザがPixivでブックマークしたイラスト__のため，本ツール使用時には__Pixivアカウントが必要__です．動作確認はWindowsでは確認しましたが，Mac，Linuxでは確認していません．
+　[Pixiv](https://www.pixiv.net/)のイラストを保存する場合などはPixiv非公式APIの[PixivPy](https://github.com/upbit/pixivpy)を使うと思いますが，このツールでは[Puppeteer](https://github.com/puppeteer/puppeteer)によるブラウザの自動制御でイラストの保存を行います．保存対象は**ユーザがPixivでブックマークしたイラスト**のため，本ツール使用時には**Pixivアカウントが必要**です．動作確認はWindowsでは確認しましたが，Mac，Linuxでは確認していません．
 ## 導入
 ```bash
 # 本リポジトリのクローン
