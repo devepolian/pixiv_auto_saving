@@ -1,0 +1,14 @@
+{
+  "name": "illustautosavetool",
+  "version": "1.0.0",
+  "description": "ブックマークしたイラストを自動で保存するツールです．",
+  "main": "auto-save-illust.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "devepolian",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^13.0.0"
+  }
+}
