@@ -390,6 +390,25 @@ const stopProcess = async () => {
   await stopPromise.then();
 }
 
+// ネタバレ表示ボタンがあるかどうかチェックする関数
+// page:  Puppeteerのページオブジェクト
+// illustAnchor: イラストへのセレクター
+const checkNetabare = async (page, illustAnchor) => {
+  try {
+    await page.waitForSelector(illustAnchor);
+  } catch (e) {
+    // ネタバレ表示ボタンへのセレクター
+    const netabareSelector = `main figure button`;
+
+    // ネタバレ表示ボタンの有無
+    const isNetabare = await page.$eval(netabareSelector, button => button.innerHTML.includes("表示"));
+
+    // ネタバレ表示ボタンがあった場合はクリック
+    if(isNetabare)
+      await page.click(netabareSelector);
+  }
+}
+
 // イラストをクリックして新規タブで開く関数（新規タブでURL遷移すると403になる場合があるため）
 // brwoser: Puppeteerのブラウザオブジェクト
 // page:    Puppeteerのページオブジェクト
@@ -749,6 +768,9 @@ const isExistImg = async (targetUrl, p) => {
 
       // イラストへのaタグ
       const illustAnchor = 'div[role="presentation"]>a';
+
+      //　ネタバレ注意表示の有無をチェックし，あった場合には表示する
+      await checkNetabare(illustPage, illustAnchor);
 
       // 複数イラストかどうか判別
       const isManga = illustsNum > 1;
